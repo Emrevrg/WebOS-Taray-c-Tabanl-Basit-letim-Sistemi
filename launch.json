@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Chrome ile Başlat",
+            "type": "chrome",
+            "request": "launch",
+            "file": "${workspaceFolder}/index.html",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": ["--allow-file-access-from-files"],
+            "sourceMaps": true
+        }
+    ]
+}

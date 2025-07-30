@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://picsum.photos/1920/1080');
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.desktop {
+    height: 100vh;
+    position: relative;
+}
+
+/* Masaüstü simgeleri */
+.desktop-icons {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 40px);
+    padding: 20px;
+}
+
+.icon {
+    width: 80px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.icon[data-app="webapp"] {
+    position: absolute;
+    transition: all 0.2s ease;
+    user-select: none;
+    z-index: 1;
+}
+
+.icon[data-app="webapp"]:hover {
+    transform: scale(1.1);
+}
+
+.icon[data-app="webapp"]:active {
+    cursor: grabbing;
+}
+
+.icon i {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.icon span {
+    font-size: 12px;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Görev çubuğu */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+}
+
+.start-menu-button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.start-menu-button i {
+    font-size: 20px;
+}
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Başlat menüsü */
+.start-menu {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 300px;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    padding: 20px;
+    border-top-right-radius: 5px;
+}
+
+.menu-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Pencere stilleri */
+.window {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    min-width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.window-header {
+    background: rgba(0,0,0,0.8);
+    padding: 8px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.window-close { background: #ff5f56; }
+.window-minimize { background: #ffbd2e; }
+.window-maximize { background: #27c93f; }
+
+.window-content {
+    padding: 15px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Web uygulaması form stilleri */
+.webapp-creator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+
+.webapp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 300px;
+}
+
+.webapp-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.webapp-form button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#save-webapp {
+    background: #27c93f;
+    color: white;
+}
+
+#cancel-webapp {
+    background: #ff5f56;
+    color: white;
+}
+
+/* Web uygulaması penceresi */
+.webapp-window {
+    width: 80vw !important;
+    height: 80vh !important;
+    min-width: 800px;
+    min-height: 600px;
+}
+
+.webapp-window .window-content {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.webapp-window iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Sistem ikonları için stil */
+.icon[data-app]:not([data-app="webapp"]) {
+    position: absolute;
+    transition: all 0.2s ease;
+    user-select: none;
+    z-index: 1;
+}
+
+.icon[data-app]:not([data-app="webapp"]):hover {
+    transform: scale(1.1);
+}
+
+.icon[data-app]:not([data-app="webapp"]):active {
+    cursor: grabbing;
+}
+
+/* Sağ tık menüsü stilleri */
+.context-menu {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 5px 0;
+    min-width: 150px;
+    z-index: 10000;
+}
+
+.context-menu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #333;
+}
+
+.context-menu-item:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+/* İkon stilleri */
+.icon {
+    position: absolute;
+    transition: all 0.2s ease;
+    user-select: none;
+    z-index: 1;
+}
+
+.icon:active {
+    cursor: grabbing;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+} 

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web OS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="desktop">
+        <!-- Masaüstü simgeleri -->
+        <div class="desktop-icons">
+            <div class="icon" data-app="documents">
+                <i class="fas fa-folder"></i>
+                <span>Belgelerim</span>
+            </div>
+            <div class="icon" data-app="trash">
+                <i class="fas fa-trash"></i>
+                <span>Çöp Kutusu</span>
+            </div>
+            <div class="icon" data-app="weather">
+                <i class="fas fa-cloud-sun"></i>
+                <span>Hava Durumu</span>
+            </div>
+            <div class="icon" data-app="notepad">
+                <i class="fas fa-sticky-note"></i>
+                <span>Not Defteri</span>
+            </div>
+            <div class="icon" data-app="settings">
+                <i class="fas fa-cog"></i>
+                <span>Ayarlar</span>
+            </div>
+            <div class="icon" data-app="webapps">
+                <i class="fas fa-globe"></i>
+                <span>Web Uygulamaları</span>
+            </div>
+        </div>
+
+        <!-- Görev çubuğu -->
+        <div class="taskbar">
+            <div class="start-menu-button">
+                <i class="fas fa-windows"></i>
+            </div>
+            
+            <div class="system-tray">
+                <div class="battery">
+                    <i class="fas fa-battery-three-quarters"></i>
+                    <span class="battery-level">75%</span>
+                </div>
+                <div class="clock">
+                    <span class="time">12:00</span>
+                    <span class="date">01.01.2024</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Başlat menüsü -->
+        <div class="start-menu hidden">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Kullanıcı</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Ayarlar</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-power-off"></i>
+                    <span>Kapat</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bildirim alanı -->
+        <div class="notification-center hidden">
+            <div class="notification-header">
+                <h3>Bildirimler</h3>
+                <button class="clear-notifications">Temizle</button>
+            </div>
+            <div class="notifications-container"></div>
+        </div>
+
+        <!-- Pencere şablonu -->
+        <div class="windows-container"></div>
+
+        <!-- Tema seçici -->
+        <div class="theme-picker hidden">
+            <div class="theme-option" data-theme="default">Varsayılan</div>
+            <div class="theme-option" data-theme="dark">Karanlık</div>
+            <div class="theme-option" data-theme="light">Aydınlık</div>
+        </div>
+
+        <!-- Web uygulaması ekleme penceresi -->
+        <div class="webapp-creator hidden">
+            <div class="webapp-form">
+                <h3>Web Uygulaması Ekle</h3>
+                <input type="text" id="webapp-title" placeholder="Uygulama Başlığı">
+                <input type="url" id="webapp-url" placeholder="https://example.com">
+                <div class="form-buttons">
+                    <button id="save-webapp">Kaydet</button>
+                    <button id="cancel-webapp">İptal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
