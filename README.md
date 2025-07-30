@@ -24,5 +24,6 @@ Projeyi çalıştırmak için şu adımları izleyin:
 
 1. Bu repoyu bilgisayarınıza klonlayın:
    ```bash
-   git clone https://github.com/kullaniciadi/WebOS.git
+   git clone https://github.com/Emrevrg/WebOS-Taray-c-Tabanl-Basit-letim-Sistemi.git
 
+önemli: launch.json kodunu  açılmayan her webapp projenizde yapıştırarak her cihazda sorunsuz çalışmasını sağlayabilirsiniz.
